@@ -1,5 +1,5 @@
-import Hero from "../components/Hero/Hero"
-import Lists from '../components/Lists/Lists'
+import Hero from "../Hero/Hero"
+import Lists from '../Lists/Lists'
 
 const Home = () => {
     return (
