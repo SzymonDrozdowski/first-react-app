@@ -5,26 +5,27 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addColumn } from '../../redux/store';
 
-const ColumnForm = () => {
-
-    const dispatch = useDispatch();
+const ColumnForm = props => {
 
     const [title, setTitle] = useState('');
     const [icon, setIcon] = useState('');
     
+    const dispatch = useDispatch();
+
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(addColumn({ title, icon }));
+        dispatch(addColumn({ title, icon, listId: props.listId }));
         setIcon('');
+        setTitle('');
 };
 
 	return (
         <form className={styles.columnForm} onSubmit={handleSubmit}>
-            <div>
+            
                 <span> Title:<TextInput value={title} onChange={e => setTitle(e.target.value)} /></span>
                 <span> Icon: <TextInput value={icon} onChange={e => setIcon(e.target.value)} /></span>
                 <Button>Add column</Button>
-            </div>
+            
         </form>
 	);
 };
