@@ -15,6 +15,11 @@
 .btn {
     border: none;
     background-color: transparent;
+    font-size: 15px;
+}
+
+.btn:hover {
+    color: $color-warning;
 }
 
 .isFavorite {
